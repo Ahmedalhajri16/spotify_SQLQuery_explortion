@@ -118,3 +118,30 @@ SELECT
     COUNT(DISTINCT album_name) AS distinct_albums
 FROM dbo.spotify_tracks
 GROUP BY language;
+
+-- Calculate the average track duration for each year
+SELECT 
+    year,
+    AVG(duration_ms) AS avg_duration
+FROM dbo.spotify_tracks
+GROUP BY year
+ORDER BY year DESC;
+
+-- Identify tracks with high instrumentalness and calculate their average duration
+SELECT 
+    track_name,
+    AVG(instrumentalness) AS avg_instrumentalness,
+    AVG(duration_ms) AS avg_duration
+FROM dbo.spotify_tracks
+GROUP BY track_name
+HAVING AVG(instrumentalness) > 0.5
+ORDER BY avg_instrumentalness DESC;
+
+-- Count the number of tracks in each album
+SELECT 
+    album_name,
+    COUNT(*) AS track_count
+FROM dbo.spotify_tracks
+GROUP BY album_name
+ORDER BY track_count DESC;
+
