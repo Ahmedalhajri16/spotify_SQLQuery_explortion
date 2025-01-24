@@ -162,15 +162,7 @@ ORDER BY popularity DESC;
 
 ---
 
-## **How to Use**
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-repo/spotify-tracks-analysis.git
-   ```
-2. Import the `spotify_tracks` dataset into your SQL server.
-3. Run the provided SQL scripts in any SQL client to analyze the data and generate insights.
 
----
 
 ## **Future Work**
 - Expand analysis to include additional audio features like danceability, energy, and key.
